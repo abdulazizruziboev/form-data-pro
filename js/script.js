@@ -77,7 +77,7 @@ elFormSubmit.addEventListener("click",()=>{
                     combined: objFormData.get("combinedConsumption").trim()+" L/100km"
                 }
             };
-            elForm.querySelectorAll("input, textarea").forEach(el=>el.disabled=true);
+            elForm.querySelectorAll("input, textarea, button").forEach(el=>el.disabled=true);
             fetch("https://json-api.uz/api/project/fn44-amaliyot/cars",{
                 method:"POST",
                 headers:{
@@ -88,15 +88,15 @@ elFormSubmit.addEventListener("click",()=>{
             then(res=>{
                 if(res.ok) {
                     successAlert("Car added successfuly!");
-                    elForm.querySelectorAll("input, textarea").forEach(el=>el.disabled=false);
+                    elForm.querySelectorAll("input, textarea,button").forEach(el=>el.disabled=false);
                     elForm.querySelectorAll("input, textarea").forEach(el=>el.value='');
                 } else if(!(res.ok)){                
                     errorAlert("Error... try again.");
-                    elForm.querySelectorAll("input, textarea").forEach(el=>el.disabled=false);
+                    elForm.querySelectorAll("input, textarea,button ").forEach(el=>el.disabled=false);
                 }
             }).catch(()=>{
                 errorAlert("Error... try again.");
-                elForm.querySelectorAll("input, textarea").forEach(el=>el.disabled=false);
+                elForm.querySelectorAll("input, textarea,button ").forEach(el=>el.disabled=false);
             })
         })
     }
