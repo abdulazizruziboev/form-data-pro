@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="w-full h-[100vh] flex justify-center items-center">
+
+    <template id="infoAlertTemplate">
+    <div role="alert" class="min-w-[250px] transition-all duration-300 alert alert-info text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>New software update available.</span>
+    </div>
+    </template>
+
+    <template id="successAlertTemplate">
+    <div role="alert" class="min-w-[250px] transition-all duration-300 alert alert-success text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>Your purchase has been confirmed!</span>
+    </div>
+    </template>
+
+    <template id="errorAlertTemplate">
+    <div role="alert" class="min-w-[250px] transition-all duration-300 alert alert-error text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>Error! Task failed successfully.</span>
+    </div>
+    </template>
+
+    <div class="h-full min-w-[300px] fixed top-0 right-0 px-4 py-6 flex flex-col gap-y-2 items-end justify-start pointer-events-none z-1" id="alertBox"></div>
+
+    <main class="w-full max-w-[1440px] max-h-[800px] h-full flex items-center justify-center">
+        <form class="grid grid-cols-2 gap-4 w-full px-6" id="addCarForm">
+            <span class="col-span-full text-[25px]">Add new car</span>
+            <input class="w-full input" type="text" placeholder="Please enter car-name" name="name" aria-label="name">
+            <input class="w-full input" type="text" placeholder="Please enter car-trim" name="trim" aria-label="trim">
+            <input class="w-full input" type="number" placeholder="Please enter car-year" name="year" aria-label="year">
+            <input class="w-full input" type="text" placeholder="Please enter car-generation" name="generation" aria-label="generation">
+            <input class="w-full input" type="text" placeholder="Please enter car-country" name="country" aria-label="country">
+            <input class="w-full input" type="text" placeholder="Please enter car-category" name="category" aria-label="category">
+            <input class="w-full input" type="text"  placeholder="Please enter car-color-name" name="colorName" aria-label="color-name">
+            <label for="carColor" class="input w-full">
+                Car color
+                <input class="w-full grow cursor-pointer" type="color" name="color" id="carColor" aria-label="car_color">
+            </label>
+            <input class="w-full input" type="number"  placeholder="Please enter car-door-count" name="doorCount" aria-label="door-count">
+            <input class="w-full input" type="number"  placeholder="Please enter car-seat-count" name="seatCount" aria-label="seat-count">
+            <label for="carMaxSpeed" class="input w-full">
+                <input class="w-full grow" type="number"   placeholder="Please enter car-max-speed" name="maxSpeed" id="carMaxSpeed" aria-label="max-speed">
+                km/h
+            </label>
+            <label for="carAcceleration" class="input w-full">
+                0-100 km/h:
+                <input class="w-full grow" type="number"   placeholder="Please enter car-acceleration" name="acceleration" id="carAcceleration" aria-label="acceleration">
+                s
+            </label>
+            <input class="w-full input" type="text"  placeholder="Please enter car-engine" name="engine" aria-label="engine">
+            <input class="w-full input" type="number" min="1" max="200"  placeholder="Please enter car-horse-power" name="horsepower" aria-label="horsepower">
+            <input class="w-full input" type="number" placeholder="Please enter car-fuel-type" name="fuelType" aria-label="fuel-type">
+            <label for="cityConsumption" class="input w-full">
+                <input class="w-full grow" type="number"   placeholder="Please enter car-city-consumption" name="cityConsumption" id="cityConsumption" aria-label="city-consumption">
+                L/100km
+            </label>
+            <label for="highwayConsumption" class="input w-full">
+                <input class="w-full grow" type="number"   placeholder="Please enter car-highway-consumption" name="highwayConsumption" id="highwayConsumption" aria-label="highway-consumption">
+                L/100km
+            </label>
+            <label for="combinedConsumption" class="input w-full">
+                <input class="w-full grow" type="number"   placeholder="Please enter car-combined-consumption" name="combinedConsumption" id="combinedConsumption" aria-label="combined-consumption">
+                L/100km
+            </label>
+            <textarea name="description" class="input w-full py-2 min-h-[60px] col-span-full" placeholder="Please enter car-description" aria-label="description"></textarea>
+            <button class="w-full col-span-full btn btn-outline btn-info" id="addCarFormSubmit" type="submit">
+                Add 
+            </button>
+        </form>
+    </main>
+         
+    <script src="/js/script.js"></script>
+</body>
+</html>
