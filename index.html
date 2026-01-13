@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="w-full h-[100vh] flex justify-center items-center">
+<body class="w-full h-[100vh] flex justify-center items-center dark:bg-[#333]">
 
     <template id="infoAlertTemplate">
     <div role="alert" class="min-w-[250px] transition-all duration-300 alert alert-info text-white">
@@ -40,46 +40,46 @@
     <div class="h-full min-w-[300px] fixed top-0 right-0 px-4 py-6 flex flex-col gap-y-2 items-end justify-start pointer-events-none z-1" id="alertBox"></div>
 
     <main class="w-full max-w-[1440px] max-h-[800px] h-full flex items-center justify-center">
-        <form class="grid grid-cols-2 gap-4 w-full px-6" id="addCarForm">
+        <form class="grid grid-cols-2 gap-4 w-full px-6 dark:text-white" id="addCarForm">
             <span class="col-span-full text-[25px]">Add new car</span>
-            <input class="w-full input" type="text" placeholder="Please enter car-name" name="name" aria-label="name">
-            <input class="w-full input" type="text" placeholder="Please enter car-trim" name="trim" aria-label="trim">
-            <input class="w-full input" type="number" placeholder="Please enter car-year" name="year" aria-label="year">
-            <input class="w-full input" type="text" placeholder="Please enter car-generation" name="generation" aria-label="generation">
-            <input class="w-full input" type="text" placeholder="Please enter car-country" name="country" aria-label="country">
-            <input class="w-full input" type="text" placeholder="Please enter car-category" name="category" aria-label="category">
-            <input class="w-full input" type="text"  placeholder="Please enter car-color-name" name="colorName" aria-label="color-name">
-            <label for="carColor" class="input w-full">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text" placeholder="Please enter car-name" name="name" aria-label="name">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text" placeholder="Please enter car-trim" name="trim" aria-label="trim">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="number" placeholder="Please enter car-year" name="year" aria-label="year">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text" placeholder="Please enter car-generation" name="generation" aria-label="generation">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text" placeholder="Please enter car-country" name="country" aria-label="country">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text" placeholder="Please enter car-category" name="category" aria-label="category">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text"  placeholder="Please enter car-color-name" name="colorName" aria-label="color-name">
+            <label for="carColor" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
                 Car color
-                <input class="w-full grow cursor-pointer" type="color" name="color" id="carColor" aria-label="car_color">
+                <input class="w-full grow  cursor-pointer" type="color" name="color" id="carColor" aria-label="car_color">
             </label>
-            <input class="w-full input" type="number"  placeholder="Please enter car-door-count" name="doorCount" aria-label="door-count">
-            <input class="w-full input" type="number"  placeholder="Please enter car-seat-count" name="seatCount" aria-label="seat-count">
-            <label for="carMaxSpeed" class="input w-full">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="number"  placeholder="Please enter car-door-count" name="doorCount" aria-label="door-count">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="number"  placeholder="Please enter car-seat-count" name="seatCount" aria-label="seat-count">
+            <label for="carMaxSpeed" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
                 <input class="w-full grow" type="number"   placeholder="Please enter car-max-speed" name="maxSpeed" id="carMaxSpeed" aria-label="max-speed">
                 km/h
             </label>
-            <label for="carAcceleration" class="input w-full">
+            <label for="carAcceleration" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
                 0-100 km/h:
-                <input class="w-full grow" type="number"   placeholder="Please enter car-acceleration" name="acceleration" id="carAcceleration" aria-label="acceleration">
+                <input class="w-full grow " type="number"   placeholder="Please enter car-acceleration" name="acceleration" id="carAcceleration" aria-label="acceleration">
                 s
             </label>
-            <input class="w-full input" type="text"  placeholder="Please enter car-engine" name="engine" aria-label="engine">
-            <input class="w-full input" type="number" min="1" max="200"  placeholder="Please enter car-horse-power" name="horsepower" aria-label="horsepower">
-            <input class="w-full input" type="number" placeholder="Please enter car-fuel-type" name="fuelType" aria-label="fuel-type">
-            <label for="cityConsumption" class="input w-full">
-                <input class="w-full grow" type="number"   placeholder="Please enter car-city-consumption" name="cityConsumption" id="cityConsumption" aria-label="city-consumption">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="text"  placeholder="Please enter car-engine" name="engine" aria-label="engine">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="number" min="1" max="200"  placeholder="Please enter car-horse-power" name="horsepower" aria-label="horsepower">
+            <input class="w-full input dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]" type="number" placeholder="Please enter car-fuel-type" name="fuelType" aria-label="fuel-type">
+            <label for="cityConsumption" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
+                <input class="w-full grow " type="number"   placeholder="Please enter car-city-consumption" name="cityConsumption" id="cityConsumption" aria-label="city-consumption">
                 L/100km
             </label>
-            <label for="highwayConsumption" class="input w-full">
-                <input class="w-full grow" type="number"   placeholder="Please enter car-highway-consumption" name="highwayConsumption" id="highwayConsumption" aria-label="highway-consumption">
+            <label for="highwayConsumption" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
+                <input class="w-full grow " type="number"   placeholder="Please enter car-highway-consumption" name="highwayConsumption" id="highwayConsumption" aria-label="highway-consumption">
                 L/100km
             </label>
-            <label for="combinedConsumption" class="input w-full">
-                <input class="w-full grow" type="number"   placeholder="Please enter car-combined-consumption" name="combinedConsumption" id="combinedConsumption" aria-label="combined-consumption">
+            <label for="combinedConsumption" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue]">
+                <input class="w-full grow " type="number"   placeholder="Please enter car-combined-consumption" name="combinedConsumption" id="combinedConsumption" aria-label="combined-consumption">
                 L/100km
             </label>
-            <textarea name="description" class="input w-full py-2 min-h-[60px] col-span-full max-h-[150px]" placeholder="Please enter car-description" aria-label="description"></textarea>
+            <textarea name="description" class="input w-full dark:bg-[#333] dark:border-[#ddd] dark:text-white dark:outline-[dodgerblue] py-2 min-h-[60px] col-span-full max-h-[150px]" placeholder="Please enter car-description" aria-label="description"></textarea>
             <button class="w-full col-span-full btn btn-outline btn-info" id="addCarFormSubmit" type="submit">
                 Add 
             </button>
